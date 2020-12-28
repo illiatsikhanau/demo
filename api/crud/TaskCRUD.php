@@ -1,9 +1,8 @@
 <?php
-include_once 'api/config/Database.php';
 
 class TaskCRUD {
     static function read($id): int {
-        $query = "SELECT title, data, created FROM task WHERE id = $id";
+        $query = "SELECT id, title, data, created FROM task WHERE id = $id";
         $stmt = Database::getConnection()->prepare($query);
         $stmt->execute();
 
